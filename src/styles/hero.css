@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500&display=swap');
+
+.banner{    
+    position: relative;
+    height: 70%;
+    background-size: cover;
+    background-position: center;
+    background-color: #F5F5F5;
+    transition: all 1s ease-in-out;
+    background-image:  url('../../public/bakery1.jpg');
+    animation: banner 28s infinite linear;
+}
+.banner >div >h1{
+  font-family: 'fira sans';
+  font-weight: bold;
+}
+
+@keyframes banner{
+    0%{
+        background-image: url('../../public/bakery1.jpg');
+    }
+    25%{
+        background-image: url('../../public/bakery1.jpg');
+    }
+
+    26%{
+        background-image: url('../../public/bakery2.jpg');
+    }
+    50%{
+        background-image: url('../../public/bakery2.jpg');
+    }
+
+    51%{
+        background-image: url('../../public/bakery3.jpg');
+    }
+    75%{
+        background-image: url('../../public/bakery3.jpg');
+    }
+
+    76%{
+        background-image: url('../../public/bakery4.jpg');
+    }
+    100%{
+        background-image: url('../../public/bakery4.jpg');
+    }
+}
