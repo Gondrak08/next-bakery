@@ -35,7 +35,7 @@ export default function Home() {
       <section id="products" className="h-auto  py-12 bg-gray-100">
         {/* product buttons */}
         <h1 className="text-center text-3xl" style={{ color: 'rgb(239, 121, 152)' }} >Nossos produtos</h1>
-        <div className="flex justify-center space-x-8 mt-4">
+        <div className="flex justify-center space-x-8 mt-4" style={{fontFamily: 'Montserrat'}}>
           <a href="" className="btn bg-transparent border rounded hover:bg-pink-400 hover:text-white py-2 px-4">Tudo</a>
           <a href="" className="btn bg-transparent border rounded hover:bg-pink-400 hover:text-white py-2 px-4">Bolos</a>
           <a href="" className="btn bg-transparent border rounded hover:bg-pink-400 hover:text-white py-2 px-4">Pães</a>
@@ -95,7 +95,7 @@ export default function Home() {
 
       <footer className="bg-black h-10">
         <div className="flex justify-between items-center h-full mx-32">
-          <div className="flex text-white space-x-3">
+          <div className="flex text-white text-sm space-x-3">
             <p className="text-white">
               Dona Chica
           </p>
