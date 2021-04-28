@@ -44,3 +44,9 @@
         background-image: url('../../public/bakery4.jpg');
     }
 }
+
+@media(max-width:411px){
+    .banner{
+        height: 50%;
+    }
+}
