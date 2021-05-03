@@ -1,5 +1,12 @@
+import { useRouter } from 'next/router';
 
 const Hero = () => {
+    let router = useRouter();
+
+    let title = router.locale === 'pt-BR' ? 'Bem vindo a' :
+        router.locale === 'en-US' ? 'Welcome to' :
+        router.locale === 'es' ? 'Bienvenido a':''
+
     return (
         <>
             <div className="flex justify-center banner">
@@ -10,7 +17,7 @@ const Hero = () => {
                             color:'#ebd0b3'
                         }}
                     >
-                        Bem vindo a <strong className="text-3xl md:text-7xl" style={{ color:'#ef7998'}} >Dona Chica</strong>
+                        {title} <strong className="text-3xl md:text-7xl" style={{ color:'#ef7998'}} >Dona Chica</strong>
                         </h1>
                 </div>
             </div>

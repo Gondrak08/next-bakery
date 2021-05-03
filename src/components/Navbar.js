@@ -1,21 +1,34 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import  Link from 'next/link'
+
 
 const NavBar = () => {
-
+    const [isDropDown, setIsDropDown] = useState(false);
     const [active, setActive] = useState(false);
-    console.log(active);
     const handleCLick = () => {
         setActive(!active);
     }
+    
+    const handleDropDown = () => {
+        setIsDropDown(!isDropDown)
+        console.log(isDropDown)
+    }
+
+    const {locales} = useRouter()
+    let router = useRouter()
+    let about = router.locale === 'pt-BR' ? 'Sobre' : router.locale === 'en-US' ? 'About' : router.locale === 'es' ? 'Acerca de' : '';
+    let product = router.locale === 'pt-BR' ? 'Produtos' : router.locale === 'en-US' ? 'Products' : router.locale === 'es' ? 'Productos' : '';
+    let contact = router.locale === 'pt-BR' ? 'Contato' : router.locale === 'en-US' ? 'Contact' : router.locale === 'es' ? 'Contacto' : '';
 
 
     return (
         <nav className=
             'container-screen  flex flex-wrap md:h-16 bg-white justify-between items-center px-3 md:px-32'
         >
-            <div >
+            <section >
                 <img src="/bakeryLogo.svg" alt="" className="h-16"/>
-            </div>
+            </section>
             
             <button className="md:hidden inline-flex focus:outline-none" onClick={handleCLick} >
                     <img className=" block" src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png" width="40" height="40" />
@@ -23,7 +36,7 @@ const NavBar = () => {
             </button>
       
 
-            <div className={`${
+            <section className={`${
                 active ? '': 'hidden'
             } w-full md:flex md:justify-center md:items-center md:flex-grow md:w-auto`}>
                 <ul className=" flex flex-col items-start ml-3 mx-3 md:flex-row md:w-auto md:space-x-6 md:text-2xl text-yellow-600" style={{
@@ -36,25 +49,23 @@ const NavBar = () => {
                     </li>
                     <li className="hover:text-yellow-300">
                         <a href="#about">
-                            Sobre
+                            {about}
                     </a>
                     </li>
                     <li className="hover:text-yellow-300">
                         <a href="#products">
-                            Produtos
+                            {product}
                     </a>
                     </li>
                     <li className="hover:text-yellow-300">
                         <a href="#contact">
-                            Contato
+                            {contact}
                     </a>
                     </li>
                 </ul>
+            </section>
 
-            </div>
-
-
-            <div className="hidden md:flex space-x-8" >
+            <section className="hidden md:flex space-x-8 mx-2" >
                 <div className="text-yellow-400 text-sm">
                     <span>123 456 789</span>
                 </div>
@@ -71,7 +82,31 @@ const NavBar = () => {
                 </span>
                     </p>
                 </div>
-            </div>
+            </section>
+
+            {/* flags */}
+            <section className="relative" >
+                <button onClick={handleDropDown}>
+                  <a href="#">Linguas</a>  
+                </button>
+                <ul className={`${isDropDown ? 'hidden' : 'absolute bg-white  top-10 h-20 w-20 flex flex-col items-center  z-20'} `}>
+                            {locales.map((loc) => (
+                                // console.log(loc),
+                                <>
+                                    <li className="hover:bg-yellow-300 hover:text-white  overflow-hidden shadow-xl h-full w-full pl-2" key={loc}>
+                                    <Link href="/" locale={loc} >
+                                            <a href="">
+                                                {loc}
+                                                {/* <img src="./pt.png" alt="" /> */}
+                                            </a>
+                                    </Link>
+                                </li>
+                                </>
+                            ))}
+                        </ul>
+               
+            </section>
+
 
         </nav>    
     )
