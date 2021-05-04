@@ -20,6 +20,8 @@ const NavBar = () => {
     let about = router.locale === 'pt-BR' ? 'Sobre' : router.locale === 'en-US' ? 'About' : router.locale === 'es' ? 'Acerca de' : '';
     let product = router.locale === 'pt-BR' ? 'Produtos' : router.locale === 'en-US' ? 'Products' : router.locale === 'es' ? 'Productos' : '';
     let contact = router.locale === 'pt-BR' ? 'Contato' : router.locale === 'en-US' ? 'Contact' : router.locale === 'es' ? 'Contacto' : '';
+    let language = router.locale === 'pt-BR' ? 'Línguas' : router.locale === 'en-US' ? 'Languages' : router.locale === 'es' ? 'Idiomas' : '';
+
 
 
     return (
@@ -85,26 +87,26 @@ const NavBar = () => {
             </section>
 
             {/* flags */}
-            <section className="relative" >
-                <button onClick={handleDropDown}>
-                  <a href="#">Linguas</a>  
+            <section className={`${active ? '' : 'hidden'} md:flex md:relative`} >
+                <button className={`${active ? '' : 'hidden'} md:flex justify-center md:relative mt-2 md:mt-0 rounded border md:left-10 w-32 py-1 hover:bg-gray-100`} onClick={handleDropDown}>
+                    <a className="text-sm text-yellow-600" href="#">{language}</a>
                 </button>
-                <ul className={`${isDropDown ? 'hidden' : 'absolute bg-white  top-10 h-20 w-20 flex flex-col items-center  z-20'} `}>
-                            {locales.map((loc) => (
-                                // console.log(loc),
-                                <>
-                                    <li className="hover:bg-yellow-300 hover:text-white  overflow-hidden shadow-xl h-full w-full pl-2" key={loc}>
-                                    <Link href="/" locale={loc} >
-                                            <a href="">
-                                                {loc}
-                                                {/* <img src="./pt.png" alt="" /> */}
-                                            </a>
-                                    </Link>
-                                </li>
-                                </>
-                            ))}
-                        </ul>
-               
+                <ul className={`${!isDropDown ? 'hidden' : 'md:absolute bg-white md:left-10 md:top-10 md:z-20 md:mb-0 mb-3 h-20 w-32 flex flex-col items-center '}` }>
+                    {locales.map((loc) => (
+                        // console.log(loc),
+                        <>
+                            <li className="hover:bg-yellow-300 hover:text-white  overflow-hidden shadow-xl h-full w-32 pl-2" key={loc}>
+                                <Link className="w-32" href="/" locale={loc} >
+                                    <a className="w-32" href="">
+                                        {loc}
+                                        {/* <img src="./pt.png" alt="" /> */}
+                                    </a>
+                                </Link>
+                            </li>
+                        </>
+                    ))}
+                </ul>
+
             </section>
 
 

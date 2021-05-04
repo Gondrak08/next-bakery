@@ -36,10 +36,10 @@ const Products = () => {
                 <span className="bg-white border rounded-r-none flex items-center justify-center w-10" >
                     <FontAwesomeIcon icon={faSearch} />
                 </span>
-                <input type="text" name="" id="" className="w-1/3 h-8 border rounded rounded-l-none pl-2 " />
+                <input type="text" name="" id="" className=" md:w-1/3 h-8 border rounded rounded-l-none pl-2 " />
             </div>
             {/* items display */}
-            <div className="flex justify-evenly flex-wrap h-auto w-3/5 mx-auto pt-5 " >
+            <div className="flex justify-evenly flex-wrap h-auto w-11/12 md:w-3/5 mx-auto pt-5 " >
                 <Card />
             </div>
         </section>
