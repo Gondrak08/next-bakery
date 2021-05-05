@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
-import  Link from 'next/link'
+import { CartContext} from '../contexts/cartContext'
+import Link from 'next/link'
+
 
 
 const NavBar = () => {
+    const context = useContext(CartContext)
     const [isDropDown, setIsDropDown] = useState(false);
     const [active, setActive] = useState(false);
+    
+        console.log(context)
+
     const handleCLick = () => {
         setActive(!active);
     }
-    
     const handleDropDown = () => {
         setIsDropDown(!isDropDown)
         console.log(isDropDown)
     }
-
+    
+    
     const {locales} = useRouter()
     let router = useRouter()
     let about = router.locale === 'pt-BR' ? 'Sobre' : router.locale === 'en-US' ? 'About' : router.locale === 'es' ? 'Acerca de' : '';
     let product = router.locale === 'pt-BR' ? 'Produtos' : router.locale === 'en-US' ? 'Products' : router.locale === 'es' ? 'Productos' : '';
     let contact = router.locale === 'pt-BR' ? 'Contato' : router.locale === 'en-US' ? 'Contact' : router.locale === 'es' ? 'Contacto' : '';
     let language = router.locale === 'pt-BR' ? 'Línguas' : router.locale === 'en-US' ? 'Languages' : router.locale === 'es' ? 'Idiomas' : '';
-
-
+    
 
     return (
         <nav className=
@@ -71,6 +76,7 @@ const NavBar = () => {
                 <div className="text-yellow-400 text-sm">
                     <span>123 456 789</span>
                 </div>
+                
                 <div id="cart-info" className="flex justify-between items-center">
                     <span className="cart-info_icon mr-3">
                         <i className="fas fa-shopping-cart">
@@ -84,11 +90,12 @@ const NavBar = () => {
                 </span>
                     </p>
                 </div>
+
             </section>
 
             {/* flags */}
             <section className={`${active ? '' : 'hidden'} md:flex md:relative`} >
-                <button className={`${active ? '' : 'hidden'} md:flex justify-center md:relative mt-2 md:mt-0 rounded border md:left-10 w-32 py-1 hover:bg-gray-100`} onClick={handleDropDown}>
+                <button className={`${active ? '' : 'hidden'} md:flex justify-center md:relative my-2 md:mt-0 rounded border md:left-10 w-32 py-1 hover:bg-gray-100`} onClick={handleDropDown}>
                     <a className="text-sm text-yellow-600" href="#">{language}</a>
                 </button>
                 <ul className={`${!isDropDown ? 'hidden' : 'md:absolute bg-white md:left-10 md:top-10 md:z-20 md:mb-0 mb-3 h-20 w-32 flex flex-col items-center '}` }>
