@@ -3,12 +3,17 @@ import { useRouter } from 'next/router';
 import { CartContext} from '../contexts/cartContext'
 import Link from 'next/link'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+// import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 
+import Cart from '../components/Cart';
 
 const NavBar = () => {
     const context = useContext(CartContext)
     const [isDropDown, setIsDropDown] = useState(false);
     const [active, setActive] = useState(false);
+    // const [isDrawOpen, setIsDrawOpen] = useState(false);
     
         console.log(context)
 
@@ -48,7 +53,7 @@ const NavBar = () => {
             } w-full md:flex md:justify-center md:items-center md:flex-grow md:w-auto`}>
                 <ul className=" flex flex-col items-start ml-3 mx-3 md:flex-row md:w-auto md:space-x-6 md:text-2xl text-yellow-600" style={{
                     fontFamily: 'Montserrat'
-                }} >
+                }}  >
                     <li className="hover:text-yellow-300">
                         <a href="#">
                             Home
@@ -77,8 +82,8 @@ const NavBar = () => {
                     <span>123 456 789</span>
                 </div>
                 
-                <div id="cart-info" className="flex justify-between items-center">
-                    <span className="cart-info_icon mr-3">
+                <div  className="flex justify-between items-center">
+                    {/* <span className="cart-info_icon mr-3">
                         <i className="fas fa-shopping-cart">
                         </i>
                     </span>
@@ -86,24 +91,31 @@ const NavBar = () => {
                         <span id="item-count">2</span>
                 items - $
                 <span className="item-total">
-                            10.49
+                         
                 </span>
-                    </p>
+                    </p> */}
+                    <span>items</span>
+                    <a href="#">
+                        <FontAwesomeIcon icon={faCartPlus} onClick={() => context.setIsDrawOpen(!context.isDrawOpen)} />
+                        {/* {isDrawOpen? <Cart/> : ''  } */}
+                    </a>
                 </div>
 
             </section>
 
             {/* flags */}
             <section className={`${active ? '' : 'hidden'} md:flex md:relative`} >
+
                 <button className={`${active ? '' : 'hidden'} md:flex justify-center md:relative my-2 md:mt-0 rounded border md:left-10 w-32 py-1 hover:bg-gray-100`} onClick={handleDropDown}>
                     <a className="text-sm text-yellow-600" href="#">{language}</a>
                 </button>
+
                 <ul className={`${!isDropDown ? 'hidden' : 'md:absolute bg-white md:left-10 md:top-10 md:z-20 md:mb-0 mb-3 h-20 w-32 flex flex-col items-center '}` }>
                     {locales.map((loc) => (
                         // console.log(loc),
                         <>
-                            <li className="hover:bg-yellow-300 hover:text-white  overflow-hidden shadow-xl h-full w-32 pl-2" key={loc}>
-                                <Link className="w-32" href="/" locale={loc} >
+                            <li key={loc} className="hover:bg-yellow-300 hover:text-white  overflow-hidden shadow-xl h-full w-32 pl-2">
+                                <Link  className="w-32" href="/" locale={loc} >
                                     <a className="w-32" href="">
                                         {loc}
                                         {/* <img src="./pt.png" alt="" /> */}

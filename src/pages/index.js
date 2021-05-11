@@ -3,13 +3,17 @@ import Hero from '../components/Hero.js';
 import About from '../components/About';
 import Products from '../components/Products';
 import Footer from '../components/Footer';
+import Cart from '../components/Cart';
 
-
+import {useContext} from 'react'
 import { useRouter } from 'next/router';
+import { CartContext } from '../contexts/cartContext'
+import Card from '../components/Card.js';
 
 export default function Home() {
-
+  let context = useContext(CartContext)
   let router = useRouter()
+  // const [isDrawOpen, setIsDrawOpen] = useState(false);
 
   let title = router.locale === 'pt-BR' ? 'Deixe-nos fazer parte da suas melhores memórias.' : router.locale === 'en-US' ? 'Let us be part of your memories.' : router.locale === 'es' ? 'Permítanos ser parte de sus recuerdos.' : '';
 
@@ -24,7 +28,9 @@ export default function Home() {
 
   return (
     <>
-    <body className="container-screen h-screen ">
+    
+    <body className="container-screen h-screen   w-auto">
+        {context.isDrawOpen? <Cart/> : ''}
       <Navbar />
       <Hero />
         {/* about */}
