@@ -30,9 +30,13 @@ export default function Home() {
     <>
     
     <body className="container-screen h-screen   w-auto">
-        {context.isDrawOpen? <Cart/> : ''}
+      
+      {context.isDrawOpen ? <Cart /> : ''}    
       <Navbar />
       <Hero />
+      
+       
+          
         {/* about */}
       <About/>
       {/* products */}
@@ -73,7 +77,8 @@ export default function Home() {
               <button className="border-2 border-gray-300 w-20 h-8 hover:bg-yellow-500 hover:text-white" >{send}</button>
           </div>
         </div>
-      </section>
+        </section>
+        
       <Footer/>
       </body>
       </>

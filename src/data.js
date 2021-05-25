@@ -4,6 +4,7 @@ export const storeItems = [
         img: "/cake-1.jpeg" ,
         name: 'Bolo de Festa',
         price: 32.50,
+        amout: 1,
         category:'cakes',
     },
     {
@@ -11,6 +12,7 @@ export const storeItems = [
         img: '/cupcake-1.jpeg',
         name: 'cupcake',
         price: 2.50,
+        amout: 1,
         category:'cakes'
     },
     {
@@ -18,6 +20,7 @@ export const storeItems = [
         img: "/bolobanana.jpg",
         name: 'Bolo de banana',
         price: 25.00,
+        amout: 1,
         category: 'cakes',
     },
     {
@@ -25,6 +28,7 @@ export const storeItems = [
         img: "/pao.jpg",
         name: 'Pão frances',
         price: 0.35,
+        amout: 1,
         category:'bread',
     },
     {
@@ -32,6 +36,7 @@ export const storeItems = [
         img: "/brigadeiro.jpg",
         name: 'Brigadeiro',
         price: 1.00,
+        amout: 1,
         category:'sweets',
     },
     {
@@ -39,6 +44,7 @@ export const storeItems = [
         img: "/croissant.jpg",
         name: 'Croissant',
         price: 2.50,
+        amout: 1,
         category:'bread'
     },
     {
@@ -46,6 +52,7 @@ export const storeItems = [
         img: "/doughnut-2.jpeg",
         name: 'doughnut variados',
         price: 1.35,
+        amout: 1,
         category:'sweets'
     },
     {
@@ -53,6 +60,7 @@ export const storeItems = [
         img: "/tortalimao.jpg",
         name: 'Torta de Limão',
         price: 18.90,
+        amout: 1,
         category:'cakes'
     },
     {
@@ -60,6 +68,7 @@ export const storeItems = [
         img: "/paomel.jpg",
         name: 'Pão de mel',
         price: 3.40,
+        amout: 1,
         category:'sweets'
     }
 ]

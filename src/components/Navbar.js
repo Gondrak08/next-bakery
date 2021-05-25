@@ -77,34 +77,10 @@ const NavBar = () => {
                 </ul>
             </section>
 
-            <section className="hidden md:flex space-x-8 mx-2" >
-                <div className="text-yellow-400 text-sm">
-                    <span>123 456 789</span>
-                </div>
-                
-                <div  className="flex justify-between items-center">
-                    {/* <span className="cart-info_icon mr-3">
-                        <i className="fas fa-shopping-cart">
-                        </i>
-                    </span>
-                    <p className="mb-0 capitalize text-sm text-red-500">
-                        <span id="item-count">2</span>
-                items - $
-                <span className="item-total">
-                         
-                </span>
-                    </p> */}
-                    <span>items</span>
-                    <a href="#">
-                        <FontAwesomeIcon icon={faCartPlus} onClick={() => context.setIsDrawOpen(!context.isDrawOpen)} />
-                        {/* {isDrawOpen? <Cart/> : ''  } */}
-                    </a>
-                </div>
-
-            </section>
+            
 
             {/* flags */}
-            <section className={`${active ? '' : 'hidden'} md:flex md:relative`} >
+            <section className={`${active ? '' : 'hidden'} md:flex md:relative mr-8`} >
 
                 <button className={`${active ? '' : 'hidden'} md:flex justify-center md:relative my-2 md:mt-0 rounded border md:left-10 w-32 py-1 hover:bg-gray-100`} onClick={handleDropDown}>
                     <a className="text-sm text-yellow-600" href="#">{language}</a>
@@ -128,6 +104,19 @@ const NavBar = () => {
 
             </section>
 
+            <section className="hidden md:flex space-x-8 mx-2" >
+                <div className="text-yellow-400 text-sm">
+                    <span>123 456 789</span>
+                </div>
+
+                <div className="flex justify-between items-center">
+                    <span>items</span>
+                    <a href="#">
+                        <FontAwesomeIcon icon={faCartPlus} onClick={() => context.setIsDrawOpen(!context.isDrawOpen)} />
+                    </a>
+                </div>
+
+            </section>
 
         </nav>    
     )

@@ -12,11 +12,11 @@ const Card = () => {
     return (
         <>
             {
-                storeItems.map((item) => (
-                    <div key={item.id} id={item.id} className="flex flex-col border bg-white rounded  md:h-72 md:w-72 hover:shadow-2xl mb-3">
+                storeItems.map((product) => (
+                    <div key={product.id} id={product.id} className="flex flex-col border bg-white rounded  md:h-72 md:w-72 hover:shadow-2xl mb-3">
                         <div className="relative img-container overflow-hidden h-full bg-black">
-                            <img src={item.img} alt="" className="w-full h-full store-img" />
-                            <button onClick={(e)=>context.onAdd(item)} className="store-item-icon" >
+                            <img src={product.img} alt="" className="w-full h-full store-img" />
+                            <button onClick={() => context.onAdd(product)} className="store-item-icon" >
                                 <FontAwesomeIcon icon={faShoppingCart} />
                             </button>
                         </div>
@@ -24,9 +24,9 @@ const Card = () => {
                             <p className="text-xl" style={{
                                 fontFamily: 'Montserrat'
                             }}  >
-                                {item.name}
+                                {product.name}
                 </p>    
-                            <p ><span>$</span> {item.price}</p>
+                            <p ><span>$</span> {product.price}</p>
                         </div>
                     </div>
                 ))
