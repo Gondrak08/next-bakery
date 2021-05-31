@@ -16,16 +16,21 @@ export const Cart = () => {
         <>
             <div className="Modal" id="myModal">
                 <div onClick={() => context.setIsDrawOpen(false)} />
-                <div className="relative float-right flex flex-col h-full pt-5 w-96 bg-white">
-                    <h2 className="pl-2 pb-2" >Produtos no carrinho de compras</h2>
-                    <div>
-                        <CartItem/>
+                    <div className="relative float-right flex flex-col h-full pt-5 w-96 bg-white">
+                        <h2 className="pl-2 pb-2" >Produtos no carrinho de compras</h2>
+                        <div>
+                            <CartItem/>
+                        </div>
+                        <div className="flex justify-end space-x-3 px-12 mt-2   items-center">
+                            <p>Valor Total: {' '} $ {' '} <span>{totalPrice}</span></p>
+                            <FontAwesomeIcon icon={faTruck} color="red" />
+                        </div>
+
+                        <div className="md:hidden relative top-10 flex justify-center items-center" >
+                        <button className="border w-36" onClick={() => context.setIsDrawOpen(false)}>Fechar Carrinho</button>
+                        </div>
+
                     </div>
-                    <div className="flex justify-end space-x-3 px-12 mt-2   items-center">
-                        <p>Valor Total: {' '} $ {' '} <span>{totalPrice}</span></p>
-                        <FontAwesomeIcon icon={faTruck} color="red" />
-                    </div>
-                </div>
             </div>
             
         </>

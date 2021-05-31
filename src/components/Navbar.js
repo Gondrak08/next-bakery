@@ -13,9 +13,8 @@ const NavBar = () => {
     const context = useContext(CartContext)
     const [isDropDown, setIsDropDown] = useState(false);
     const [active, setActive] = useState(false);
-    // const [isDrawOpen, setIsDrawOpen] = useState(false);
     
-        console.log(context)
+    console.log(context)
 
     const handleCLick = () => {
         setActive(!active);
@@ -41,13 +40,21 @@ const NavBar = () => {
             <section >
                 <img src="/bakeryLogo.svg" alt="" className="h-16"/>
             </section>
-            
-            <button className="md:hidden inline-flex focus:outline-none" onClick={handleCLick} >
-                    <img className=" block" src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png" width="40" height="40" />
-                   
-            </button>
-      
+            {/* small screens */}
+            <div className={`${context.shoppingCart.length ? 'text-red-500 ' : ''} md:hidden flex justify-between items-center space-x-5`} >
+                <div className="md:hidden flex justify-between items-center ">
+                    <a href="#">
+                        <FontAwesomeIcon icon={faCartPlus} onClick={() => context.setIsDrawOpen(!context.isDrawOpen)} />
+                    </a>
+                </div>
 
+                <button className="md:hidden inline-flex focus:outline-none" onClick={handleCLick} >
+                        <img className=" block" src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png" width="40" height="40" />
+                    
+                </button>
+            </div>
+
+            {/* md-screen lg */}
             <section className={`${
                 active ? '': 'hidden'
             } w-full md:flex md:justify-center md:items-center md:flex-grow md:w-auto`}>
@@ -80,13 +87,13 @@ const NavBar = () => {
             
 
             {/* flags */}
-            <section className={`${active ? '' : 'hidden'} md:flex md:relative mr-8`} >
+            <section className={`${active ? '' : 'hidden'} md:flex md:relative  mr-8`} >
 
-                <button className={`${active ? '' : 'hidden'} md:flex justify-center md:relative my-2 md:mt-0 rounded border md:left-10 w-32 py-1 hover:bg-gray-100`} onClick={handleDropDown}>
+                <button className={`${active ? '' : 'hidden'} md:flex justify-center   md:mt-0 rounded border md:left-10 w-32 py-1 hover:bg-gray-100`} onClick={handleDropDown}>
                     <a className="text-sm text-yellow-600" href="#">{language}</a>
                 </button>
 
-                <ul className={`${!isDropDown ? 'hidden' : 'md:absolute bg-white md:left-10 md:top-10 md:z-20 md:mb-0 mb-3 h-20 w-32 flex flex-col items-center '}` }>
+                <ul className={`${!isDropDown ? 'hidden' : 'md:absolute bg-white  md:top-10 md:z-20 md:mb-0 mb-3 h-20 w-32 flex flex-col items-center '}` }>
                     {locales.map((loc) => (
                         // console.log(loc),
                         <>
@@ -104,13 +111,12 @@ const NavBar = () => {
 
             </section>
 
-            <section className="hidden md:flex space-x-8 mx-2" >
+            <section className="hidden md:flex items-center space-x-3 mx-2" >
                 <div className="text-yellow-400 text-sm">
                     <span>123 456 789</span>
                 </div>
 
-                <div className="flex justify-between items-center">
-                    <span>items</span>
+                <div className={`${context.shoppingCart.length ? 'text-red-500 ' : ''}flex justify-between items-center`}>
                     <a href="#">
                         <FontAwesomeIcon icon={faCartPlus} onClick={() => context.setIsDrawOpen(!context.isDrawOpen)} />
                     </a>

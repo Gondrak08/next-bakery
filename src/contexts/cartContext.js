@@ -5,8 +5,9 @@ const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
     // sideMenu
-    const [shoppingCart, setShoppingCart] = useState([]);
     const [isDrawOpen, setIsDrawOpen] = useState(false);
+    
+    const [shoppingCart, setShoppingCart] = useState([]);
 
 
     const onAdd = async (product) => {
