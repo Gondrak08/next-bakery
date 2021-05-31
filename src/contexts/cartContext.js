@@ -39,9 +39,7 @@ const CartProvider = ({ children }) => {
 
     const onRemove = (product) => {
         setShoppingCart(() => {
-
             const exist = shoppingCart.find((x) => x.id === product.id);
-
             if (exist.qty === 1) {
                 setShoppingCart(shoppingCart.filter((item) => item.id !== product.id));
             } else {
@@ -49,14 +47,9 @@ const CartProvider = ({ children }) => {
                     item.id===product.id?{...exist, qty: exist.qty -1} : item
                 ))
             }
-            
         })
     }
     
-    const getTotalItems = () => {
-        let items = shoppingCart;
-        items.reduce((ack = Number, item)=>ack +item.amout, 0)
-    }
 
     
     return (
