@@ -26,14 +26,12 @@ const CartProvider = ({ children }) => {
         //         }
         //     return setShoppingCart(cart)
         // })
-
         const exist = shoppingCart.find((x) => x.id === product.id)
         if (exist) {
             setShoppingCart(shoppingCart.map((x)=>x.id===product.id?{...exist, qty:exist.qty+1}:x))
         } else {
             setShoppingCart([...shoppingCart,{...product, qty:1}])
         }
-
 
     }
 

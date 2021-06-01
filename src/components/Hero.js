@@ -9,7 +9,7 @@ const Hero = () => {
 
     return (
         <>
-            <div className="flex justify-center banner">
+            <section className="flex  justify-center banner">
                 <div className="flex justify-center items-center w-full" style={{ backgroundColor:'rgba(183, 127, 85, .3)'}} >
                     <h1 className="text-2xl md:text-6xl font-roboto"
                         style={{
@@ -20,7 +20,7 @@ const Hero = () => {
                         {title} <strong className="text-3xl md:text-7xl" style={{ color:'#ef7998'}} >Dona Chica</strong>
                         </h1>
                 </div>
-            </div>
+            </section>
         </>
     )
 }
