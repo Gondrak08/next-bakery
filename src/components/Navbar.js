@@ -11,14 +11,13 @@ const NavBar = () => {
     const [isDropDown, setIsDropDown] = useState(false);
     const [active, setActive] = useState(false);
     
-    console.log(context)
 
     const handleCLick = () => {
         setActive(!active);
     }
     const handleDropDown = () => {
         setIsDropDown(!isDropDown)
-        console.log(isDropDown)
+        
     }
     
     

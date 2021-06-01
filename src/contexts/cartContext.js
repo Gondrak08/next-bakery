@@ -6,7 +6,6 @@ const CartContext = createContext();
 const CartProvider = ({ children }) => {
     // sideMenu
     const [isDrawOpen, setIsDrawOpen] = useState(false);
-    
     const [shoppingCart, setShoppingCart] = useState([]);
 
 

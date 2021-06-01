@@ -8,13 +8,11 @@ import Cart from '../components/Cart';
 import {useContext} from 'react'
 import { useRouter } from 'next/router';
 import { CartContext } from '../contexts/cartContext'
-import Card from '../components/Card.js';
 
 export default function Home() {
   let context = useContext(CartContext)
   let router = useRouter()
-  // const [isDrawOpen, setIsDrawOpen] = useState(false);
-
+  
   let title = router.locale === 'pt-BR' ? 'Deixe-nos fazer parte da suas melhores memórias.' : router.locale === 'en-US' ? 'Let us be part of your memories.' : router.locale === 'es' ? 'Permítanos ser parte de sus recuerdos.' : '';
 
   let talkToUs = router.locale === 'pt-BR' ? 'Fale conosco' : router.locale === 'en-US' ? 'Talk to us' : router.locale === 'es' ? 'Hable con nosotros' : ''
