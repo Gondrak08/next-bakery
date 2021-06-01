@@ -15,9 +15,9 @@ import { useRouter } from 'next/router';
 
 
     return (
-        <section id="about" className="flex flex-col md:flex-row w-100 justify-center">
+        <section id="about" className="flex flex-col  md:flex-row w-100 justify-center">
             <div className="flex lg:flex-row  md:flex-col md:space-y-6  md:w-11/12 p-10 md:py-10 items-center justify-center md:space-x-32 md:order-2 ">
-                <div className="flex flex-col w-auto h-96 md:h-auto lg:w-96 space-y-3 ">
+                <div className="flex flex-col justify-center w-auto h-96 md:h-auto lg:w-2/5 space-y-3 ">
                     <h1 className="text-center text-3xl md:text-4xl" style={{ color: 'rgb(239, 121, 152)' }} >{abouteName}</h1>
                     <p className="text-justify text-sm md:text-xl text-gray-800 md:mx-0">
                        {aboutText}
