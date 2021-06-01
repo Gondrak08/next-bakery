@@ -24,7 +24,7 @@ export const Cart = () => {
 
     return (
         <>
-            <div className="Modal" id="myModal">
+            <section className="Modal" id="myModal">
                 <div onClick={() => context.setIsDrawOpen(false)} />
                     <div className="relative float-right flex flex-col h-full pt-5 w-96 bg-white">
                     <h2 className="pl-2 pb-2" >{products}</h2>
@@ -40,7 +40,7 @@ export const Cart = () => {
                         <button className="border w-36" onClick={() => context.setIsDrawOpen(false)}>{close}</button>
                         </div>
                     </div>
-            </div>
+            </section>
             
         </>
     )

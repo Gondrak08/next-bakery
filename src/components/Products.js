@@ -13,11 +13,10 @@ const Products = () => {
     const inputEl = useRef('')
 
 
-    const getSearch = () => {
+    const getSearch = async() => {
         setSearch(inputEl.current.value)
-
         if (search !== "") {
-            const newProductList = storeItems.filter((product) => {
+            const  newProductList =  storeItems.filter((product) => {
               return Object.values(product)
                     .join(" ")
                     .toLowerCase()
@@ -68,10 +67,10 @@ const Products = () => {
                     ref={inputEl}
                     onChange={getSearch}
                     id="search_bar"
-                    className="md:w-1/3 h-8 border rounded rounded-l-none pl-2 " />
+                    className="w-1/3 md:w-1/2 lg:w-1/3 h-8 border rounded rounded-l-none pl-2 " />
             </div>
             {/* items display */}
-            <div className="flex justify-evenly flex-wrap h-auto w-11/12 md:w-3/5 mx-auto pt-5 " >
+            <div className="flex justify-evenly flex-wrap h-auto w-11/12 lg:w-3/5 mx-auto pt-5 " >
                 <Card products={ search.length<1 ? storeItems : searchResults  } />
             </div>
         </section>

@@ -5,9 +5,6 @@ import Link from 'next/link'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
-// import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
-
-import Cart from '../components/Cart';
 
 const NavBar = () => {
     const context = useContext(CartContext)
@@ -71,12 +68,12 @@ const NavBar = () => {
                             {about}
                     </a>
                     </li>
-                    <li className="hover:text-yellow-300">
+                    <li  className="hover:text-yellow-300">
                         <a href="#products">
                             {product}
                     </a>
                     </li>
-                    <li className="hover:text-yellow-300">
+                    <li  className="hover:text-yellow-300">
                         <a href="#contact">
                             {contact}
                     </a>
@@ -93,12 +90,12 @@ const NavBar = () => {
                     <a className="text-sm text-yellow-600" href="#">{language}</a>
                 </button>
 
-                <ul className={`${!isDropDown ? 'hidden' : 'md:absolute bg-white  md:top-10 md:z-20 md:mb-0 mb-3 h-20 w-32 flex flex-col items-center '}` }>
+                <ul className={`${!isDropDown ? 'hidden' : 'md:absolute bg-white  md:top-10 md:z-20 md:mb-0 mb-3 h-20 w-32 flex flex-col items-center '}`}>
                     {locales.map((loc) => (
                         // console.log(loc),
                         <>
                             <li key={loc} className="hover:bg-yellow-300 hover:text-white  overflow-hidden shadow-xl h-full w-32 pl-2">
-                                <Link  className="w-32" href="/" locale={loc} >
+                                <Link className="w-32" href="/" locale={loc} >
                                     <a className="w-32" href="">
                                         {loc}
                                         {/* <img src="./pt.png" alt="" /> */}

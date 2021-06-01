@@ -23,17 +23,17 @@ const Footer = () => {
                 <div>
                     <ul className=" flex justify-evenly space-x-6" >
                         <a href="#">
-                            <li>
+                            <li key="a" >
                                 <FontAwesomeIcon color="white" icon={faInstagram} />
                             </li>
                         </a>
                         <a href="#">
-                            <li>
+                            <li key="b" >
                                 <FontAwesomeIcon color="white" icon={faFacebook} />
                             </li>
                         </a>
                         <a href="#">
-                            <li>
+                            <li key="c" >
                                 <FontAwesomeIcon color="white" icon={faWhatsapp} />
                             </li>
                         </a>

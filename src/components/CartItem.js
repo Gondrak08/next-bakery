@@ -9,7 +9,6 @@ export const CartItem = () => {
     return (
         <>
             {context.shoppingCart.map((product) => (
-                console.log(product),
                 <div key={product.id} id={product.id} className="flex justify-between  w-full h-auto px-6 py-3 border-t border-b">
                     <div className="flex-1 ">
                         <h3 className="ml-2" >{product.name}</h3>
