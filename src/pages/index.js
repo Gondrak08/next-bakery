@@ -48,7 +48,8 @@ export default function Home() {
           {/* <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1960&q=80" className="h-full w-full" alt=""/> */}
           <div className="w-96">
             <p className="md:text-3xl text-white text-center">
-                "{title}" - Dona Maria -
+              "{title}"<br />
+                - Dona Maria -
             </p>
           </div>
         </section>
